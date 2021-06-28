@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .container{
+      max-width: 1100px;
+      text-align: center;
+      margin: 0 auto;
+    }
+    p{
+      letter-spacing: 3px;
+      margin: 0 0 15px 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+  <h1>기사 세부내용</h1>
+  <hr>
+  <h4>{{article.title}}</h4>
+  <hr>
+  <h5>{{article.date}}</h5>
+  <hr>
+  {% for img in image%}
+  <img src="{{img}}" alt="">
+  {% endfor %}
+  <p>{{article.content}}</p>
+</div>
+</body>
+</html>

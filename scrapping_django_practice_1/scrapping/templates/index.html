@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div class="container">
+  <h1>메인 페이지</h1>
+  <form action="{% url 'news:list' %}" method="POST">
+    {% csrf_token %}
+    <input type="text" name="keyword" placeholder="받고싶은 기사의 키워드를 입력하세요">
+    <button type="submit">등록하기</button>
+  </form>
+  <hr>
+  <h3><a href="{% url 'news:list' %}">전체기사보러가기</a></h3>
+</div>
+</body>
+</html>

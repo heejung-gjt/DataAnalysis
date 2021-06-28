@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    li{
+      display: flex;
+    }
+    img{
+      width: 150px;
+      height: 100px;
+    }
+  </style>
+</head>
+<body>
+  <h1>뉴스 스크래핑</h1>
+  <hr>
+  <h3>카테고리 : {{category}}</h3>
+  <hr>
+  <h3>언론사 : {{article_press}}</h3>
+  <ul>
+    {% for news in articles %}
+    <li>
+    <a href="{% url 'news:detail' news.pk %}">
+      <img src="{{news.preview_img}}" alt="">
+      {{ news.title }}
+    </a>
+  </li>
+    {% endfor %}
+  </ul>
+</body>
+</html>
