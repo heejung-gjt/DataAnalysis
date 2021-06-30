@@ -40,13 +40,14 @@ def parse_insight():
             date = li.select_one('li > div > span.section-list-article-byline')
             link = li.select_one('li > div > a.section-list-article-title')['href']
             code = link.split('/')[4]
-            
+
             news_url = requests.get(link)
             news_url_html = BeautifulSoup(news_url.text, 'html.parser')
             
             content = news_url_html.select_one('body > div.content > div > div.news-container > div.news-wrap > div.news-article > div.news-article-memo')
             news_image = content.select('img')
             image_url_list = []
+            
             for image in news_image:
                 image_url_list.append(image['src'])
             
