@@ -9,7 +9,7 @@
 <body>
   <ul>
     {% for news in articles %}
-    <li>{{news.date}} - {{news.title}}</li>
+    <li>{{news.category}} {{news.date}} - {{news.title}}</li>
     {% endfor %}
 
   </ul>

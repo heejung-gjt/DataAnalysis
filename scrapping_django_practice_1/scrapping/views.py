@@ -9,8 +9,8 @@ class ArticleListView(View):
 
   def get(self, request, **kwargs):
     context = {}
-    articles = Article.objects.filter(category__name='사회').all()
-    article_category = Category.objects.filter(name='사회').first()
+    articles = Article.objects.filter(category__name='건강').all()
+    article_category = Category.objects.filter(name='건강').first()
     article_press = Press.objects.filter(name='인사이트').first()
 
     context['articles'] = articles
@@ -18,6 +18,7 @@ class ArticleListView(View):
     context['article_press'] = article_press
     print(articles)
     return render(request, 'news.html',context)
+
 
 
 class IndexView(View):
